@@ -1,0 +1,43 @@
+\documentclass[11pt]{book}
+\usepackage[a4paper]{geometry}
+\usepackage[parfill]{parskip}  
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\usepackage{makeidx}
+
+\usepackage[colorlinks=true, pdfstartview=FitV, linkcolor=blue, 
+            citecolor=blue, urlcolor=blue]{hyperref}
+
+%\includeonly{Chapter1}
+
+% ------------------- Title and Author -----------------------------
+\title{Python Basic Track}
+\author{LCfP Staff}
+
+\makeindex
+
+\begin{document}
+
+\frontmatter
+\maketitle
+
+\tableofcontents
+
+\include{introduction/chapter}
+
+\mainmatter
+
+\include{what_it_is_and_isnt/chapter}
+
+\appendix
+
+\backmatter
+
+\printindex
+
+\end{document}
+\end
+
