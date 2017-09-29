@@ -1,0 +1,72 @@
+\documentclass[11pt]{book}
+\usepackage[a4paper]{geometry}
+\usepackage[parfill]{parskip}  
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\usepackage{xcolor}
+\usepackage{listings}
+\lstset{
+language=Python,
+basicstyle=\ttfamily,
+otherkeywords={self},             
+keywordstyle=\ttfamily\color{blue!90!black},
+keywords=[2]{True,False},
+keywords=[3]{ttk},
+keywordstyle={[2]\ttfamily\color{yellow!80!orange}},
+keywordstyle={[3]\ttfamily\color{red!80!orange}},
+emph={MyClass,__init__},          
+emphstyle=\ttfamily\color{red!80!black},    
+stringstyle=\color{green!80!black},
+showstringspaces=false            
+}
+
+\usepackage{makeidx}
+
+\usepackage%[colorlinks=true, pdfstartview=FitV, linkcolor=blue, citecolor=blue, urlcolor=blue]
+            {hyperref}
+
+%\includeonly{Chapter1}
+
+% ------------------- Title and Author -----------------------------
+\title{Python Basic Track}
+\author{LCfP Staff}
+
+\makeindex
+
+\begin{document}
+
+\frontmatter
+\maketitle
+
+\tableofcontents
+
+\include{introduction/chapter}
+
+\mainmatter
+
+\include{what_it_is_and_isnt/chapter}
+
+\part{Codecademy course}
+
+	\include{codecademy/python_syntax/chapter}
+
+	\include{codecademy/strings_and_console_output/chapter}
+
+	\include{codecademy/conditionals_and_control_flow/chapter}
+	
+	\include{codecademy/functions/chapter}
+	
+	\include{codecademy/lists_and_dictionaries/chapter}
+
+\appendix
+
+\backmatter
+
+\printindex
+
+\end{document}
+\end
+
