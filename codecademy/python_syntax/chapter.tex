@@ -6,10 +6,15 @@
 \chapter{Python syntax}
 
 	\section{Variables}
-	
-		\subsection{Datatypes}
 		
-		int, float, bool
+		\subsection{Datatypes}
+		Python by default provides the user with a number of built-in data types. Here we will discuss the numeric types \texttt{int}, \texttt{float}, and the logical type \texttt{bool}. The language further defines the numerical type \texttt{complex} for complex numbers, but we will not discuss those here.
+
+		Let us then talk numbers! The \texttt{int} type specifies an integral number (the numbers $..., -1, 0, 1, 2, ...$). 
+		
+		 Are there any practical limits to the size of these numbers in Python? Well, yes and no. Python tries very hard to pretend it can provide the unbounded range of mathematical integer numbers. But this comes at a speed trade-off when working with really big numbers. but at this point in the course it suffices to know that Python can produce any integer number.
+		
+		Just integer numbers are clearly not enough, and in those cases where we need decimal numbers we may use the \texttt{float} data type.
 		
 		\subsection{Duck typing}
 		
@@ -24,10 +29,21 @@
 	% MULTILINE COMMENTS DO NOT EXIST IN PYTHON!!!! THIS IS PYDOC
 	
 	\section{Arithmetic operations}
+	Python uses the same arithmetic operators you may be used to see in writing, such as \lstinline|+, -, *, /|. Familiarity with these operations is assumed, but we should note the following potential pitfall when performing integer division, \textit{e.g.},
+	
+	\lstinline|1 / 3|
+	
+	What do you think the output of this division will be? The answer is: it depends. In Python 2, the result will be $0$, since when we discard the fractional part of the divsion, \texttt{int} $1$ divided by \texttt{int} 3 becomes $0$. In Python 3 (the version we use), however, the result will indeed be $0.\bar{3}$, as the division operator was changed to always produce the true division result. Integer division is still available in Python 3, but now only through the \lstinline|//| operator.
+	
+	Now that you know about the basic arithmetic statements, consider the following,
+	
+	\lstinputlisting{codecademy/python_syntax/listings/arithmetic.py}
+	
+	What do you think the values of \lstinline|a, b, c, d| are?
 	
 	% mention ** as opposed to ^ or whatever
 	
-	% refresh the idea of integer division and modulo as the rest operation
+	% refresh the idea of modulo as the rest operation
 	
 	\section{Apply these concepts}
 	
