@@ -23,6 +23,20 @@ stringstyle=\color{green!80!black},
 showstringspaces=false            
 }
 
+\newenvironment{versiondifferences}
+{
+	\begin{center}
+		\begin{minipage}[c]{0.7\textwidth}
+		\hrule
+		\subsubsection*{Differences between python 2 and 3}
+		
+}
+{
+		\hrule
+		\end{minipage}
+	\end{center}
+}
+
 \usepackage{makeidx}
 
 \usepackage%[colorlinks=true, pdfstartview=FitV, linkcolor=blue, citecolor=blue, urlcolor=blue]
