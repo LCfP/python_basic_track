@@ -7,6 +7,38 @@
 
 	\section{Strings}
 	
+	In the previous chapter you have seen some basic data types.
+	One of the basic types is the `character'.
+	As the name suggests this type of variable can represent any\footnote{Clearly there is a limited `characterset', but if you stay within the characters used in English you should be safe.} single character.
+	Often being able to represent a single character will not be enough.
+	After all, characters are usually combined to form words, sentences, paragraphs, etc.
+	
+	To help us do this a new type of variabel was created. 
+	It is called a \textbf{\index{string}} because it represents a string of characters.
+	This concept is available in most (if not all) programming language but can have slight variations. 
+	Here we will focus on how strings work in python.
+	
+	To create a string we need to tell the system where the string starts and were it ends. 
+	Like in most languages you can use \lstinline|"| and \lstinline|'|.
+	Since these are characters themselves we cannot just use them inside of a string.
+	We need to `escape' them by putting a \lstinline|\| in front of them.
+	That makes \lstinline|\| a special character in its own right requiring it to be escaped as well.
+	An overview of common escape sequences is given in \autoref{table:escape}.
+	
+	\begin{table}[htb]
+		\centering
+		\caption{Common escape sequences}\label{table:escape}
+		\begin{tabular}{ l | l }
+			Sequence	& Represents 	\\ \hline
+			\lstinline|"\'"|	& \verb|'|	\\ \hline
+			\lstinline|"\""|	& \verb|"|	\\ \hline
+			\lstinline|"\\"|	& \verb|\|	\\ \hline
+			\lstinline|"\n"|	& newline	\\ \hline
+			\lstinline|"\t"|	& tab	\\
+			%\lstinline|"\N{name}"|	& tab	\\ \hline % UNICODE ONLY!!! introducing this will likely lead mostly to confusion not to learning...
+		\end{tabular}
+	\end{table}
+	
 	\section{Index}
 	
 	% in computers counting typically happens as an offset so if we want the 2nd item we say firstItemplus[1], the first item is firstItemplus[0]
