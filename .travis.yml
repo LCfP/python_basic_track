@@ -1,0 +1,5 @@
+script:
+- pdflatex python_basic_track.tex
+- bibtex python_basic_track
+- makeindex python_basic_track
+- rubber python_basic_track.tex
