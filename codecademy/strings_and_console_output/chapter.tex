@@ -10,7 +10,8 @@
 	\begin{itemize}
 		\item We can combine simple variables, like characters;
 		\item into more complex ones, like strings.
-		\item 
+		\item Use \lstinline|len()| to get the length of a string.
+		\item Use \lstinline|.upper()| and \lstinline|.lower()| to get upper- and lowercase versions of a string.
 	\end{itemize}
 	\clearpage
 
@@ -18,7 +19,7 @@
 	
 	In the previous chapter you have seen some basic data types.
 	One of the basic types is the `character'.
-	As the name suggests this type of variable can represent any\footnote{Clearly there is a limited `characterset', but if you stay within the characters used in English you should be safe. More about this topic later.} single character.
+	As the name suggests this type of variable can represent any\footnote{Clearly there is a limited `characterset', but if you stay within the characters used in English you should be safe. More about this topic later.}single character.
 	Often being able to represent a single character will not be enough.
 	After all, characters are usually combined to form words, sentences, paragraphs, etc.
 	
@@ -50,17 +51,88 @@
 	
 	\section{Index}
 	
-	% in computers counting typically happens as an offset so if we want the 2nd item we say firstItemplus[1], the first item is firstItemplus[0]
+	As we have established a string is a list of characters.
+	Since it is a list it makes since to think of concepts like: `first', 'second' and `last' element.
+	It is important to note that computer scientists count slightly different compared to what you may be used to.
+	The `first' element of the list is considered element 0, the `second' element 1, etc.
+	
+	Look at the code in \autoref{lst:stringindex}.
+	Between the square brackets (\lstinline|[ ]|) we specify the index of the character we want.
+	An alternative to thinking about this as `counting from 0', is to look at it as an offset (which it is).
+	The variable \lstinline|language| points to the `p' (start of the list).
+	Thus, if we want that `p' we want \lstinline|language| + 0.
+	For the second character we want \lstinline|language| +1, etc.
+	
+	\begin{center}
+		\begin{tabular}{ | c | c | c | c | c | c | }
+			\hline
+			p&y&t&h&o&n \\ \hline
+			0&1&2&3&4&5 \\ \hline
+		\end{tabular}
+	\end{center}
+	
+	\begin{lstlisting}[caption={Getting characters from a string.}, label={lst:stringindex}]
+language = 'Python'
+first = language[0]
+second = language[1]
+last = language[5]
+	\end{lstlisting}
+	
+	Also note that the highest index equals the length of the list MINUS 1.
+	Since the string `python' has 6 characters the highest index is 5. 
+	If we ask for 6th element in this string our program will crash!
+	Don't worry when this happens, but try to understand what happend (and how to solve it).
 	
 	\section{(String) Methods}
 	
-	%len() lower() upper() str()
+	The designers of python have written pieces of code so you do not have to start from scratch. 
+	A piece of reusable code is called a method.
+	Using a method is referred to as `calling' a method.
+	We `call' upon the method to do its job after which we can continue doing what we were doing.
+	Often we `call' a method to answer a question, in that case the method will `return' an answer.
+	
+	Let's look at this in action with a view examples.
+	
+	\paragraph{\lstinline|len()|}
+	
+	The method \lstinline|len()| can give us the length of a string.
+	We give it a string between the parentheses, as shown in \autoref{lst:len}.
+	It will return an integer which is the length of the list.
+	
+	\begin{lstlisting}[caption={Getting the length of a string.}, label={lst:len}]
+language = 'Python'
+length = len(language) # length = 6
+last = language[length - 1]
+	\end{lstlisting}
+	
+	When the method finishes imagine it being replaced by the answer it returned.
+	So when the computer arrives at line 2 of \autoref{lst:len} it notices the method, jumps out of our code and into the \lstinline|len()| code, computes the length and finally jumps back to our line 2 replacing `\lstinline|len(language)|' with 6.
+	Then line 2 gets execute assigning 6 as the value of the variable \lstinline|length|.
+	
+	\lstinline|len()| actually works on any list in python.
+	
+	\paragraph{\lstinline|upper()| and \lstinline|lower()|}
+	
+	These methods work slightly differently from \lstinline|len()|.
+	You can think of them as actions a string can perform on itself.\footnote{Don't worry if that doesn't make sense. We will spend extensive time on this concept at a later point.}
+	Instead of passing the string between the parentheses we use a dot (.) after the variable name. 
+	What gets returned is a changed version of the variable.
+	As the names of these variables suggest we get an upper- or lowercase version of the string respectively.
+	See \autoref{lst:upperlower} for an example.
+	
+	\begin{lstlisting}[caption={Getting the upper- and lowercase versions of a string.}, label={lst:upperlower}]
+language = 'Python'
+upper = language.upper() # upper = 'PYTHON'
+lower = language.lower() # lower = 'python'
+	\end{lstlisting}
 	
 	\section{Print}
 	
 		\subsection{Concatenation}
 		
 		\subsection{Explicit string conversion}
+		
+		% str()
 		
 		\subsection{String formatting}
 		
